@@ -1,0 +1,662 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #1FBFAF;
+  --secondary-color: #F7B135;
+  --accent-color: #CF5535;
+  --text-dark: #0D0D0D;
+  --text-light: #ffffff;
+  --bg-light: #EBEBEB;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+
+/* Header */
+header {
+  background: var(--text-light);
+  box-shadow: var(--shadow);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+/* Featured Tour */
+.featured-section {
+  max-width: 1200px;
+  margin: 4rem auto 2rem;
+  padding: 0 2rem;
+}
+
+.featured-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--text-light);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  min-height: 350px;
+}
+
+.featured-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featured-content {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.featured-badge {
+  display: inline-block;
+  background: var(--secondary-color);
+  color: var(--text-light);
+  padding: 0.3rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  width: fit-content;
+}
+
+.featured-content h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.featured-content p {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.featured-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .featured-card {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-card img {
+    height: 250px;
+  }
+}
+
+/* Hero Section */
+.hero {
+  height: 50vh;
+  background:
+    linear-gradient(rgba(31, 191, 175, 0.14), rgba(31, 191, 175, 0.167)),
+    url("https://trekkingsantamarta.com/wp-content/uploads/2026/06/Palacio-de-las-nubes-scaled.webp")
+      center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text-light);
+  margin-top: 70px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: var(--secondary-color);
+  color: var(--text-light);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: all 0.3s;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.btn:hover {
+  background: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Tours Section */
+.tours-section {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+}
+
+.tours-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.tour-card {
+  background: var(--text-light);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: all 0.3s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.tour-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+}
+
+.tour-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.tour-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.tour-title {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.tour-description {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.tour-meta {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 1rem;
+  color: #000000;
+  font-weight: 500;
+}
+
+/* Features Section */
+.features-section {
+  background: var(--bg-light);
+  padding: 4rem 2rem;
+}
+
+.features-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.feature-card {
+  text-align: center;
+  padding: 2rem;
+  background: var(--text-light);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.feature-title {
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, var(--primary-color), var(--text-dark));
+  color: var(--text-light);
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.cta-section p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Footer */
+footer {
+  background: var(--text-dark);
+  color: var(--text-light);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 1rem;
+
+}
+
+.footer-bottom p a{
+  color: var(--primary-color);
+  text-decoration: none;
+
+}
+
+/* Modal */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  ::-webkit-scrollbar {
+  width: 0px;
+}
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-container {
+  background: var(--text-light);
+  border-radius: 15px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  animation: modalIn 0.3s ease;
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 0.4rem;
+  background-color: rgba(0, 0, 0, 0.05);
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--text-dark);
+  z-index: 10;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.modal-close:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.modal-info {
+  padding: 1.5rem 2rem 2rem;
+  border-top: 1px solid #eee;
+  
+}
+
+.modal-title {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.modal-description {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.modal-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.modal-gallery {
+  padding: 1.5rem 2rem 0;
+}
+
+.modal-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+}
+
+.modal-gallery-grid img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.modal-gallery-grid img:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-hover);
+}
+
+button.btn {
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.btn-details {
+  margin-top: auto;
+}
+
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+      scrollbar-color: var(--sb-thumb-color)
+                     var(--sb-track-color);
+  }
+}
+
+/* Responsive */
+@media (min-width: 600px) {
+  .tours-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .tours-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .cta-section h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 0.8rem 1rem;
+    justify-content:center;
+    
+  }
+
+  .logo {
+    font-size: 1.4rem;
+  }
+
+  .hero {
+    height: 40vh;
+    margin-top: 56px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .btn {
+    padding: 0.8rem 2rem;
+    font-size: 0.95rem;
+  }
+
+  .tours-section,
+  .features-section {
+    padding: 0 1rem;
+  }
+
+  .tours-section {
+    margin: 2rem auto;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+
+  .tour-image {
+    height: 200px;
+  }
+
+  .tour-content {
+    padding: 1.2rem;
+  }
+
+  .tour-title {
+    font-size: 1.3rem;
+  }
+
+  .tour-meta {
+    
+    align-items: flex-start;
+  }
+
+  .features-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .feature-card {
+    padding: 1.5rem;
+  }
+
+  .feature-icon {
+    font-size: 2.5rem;
+  }
+
+  .feature-title {
+    font-size: 1.1rem;
+  }
+
+  .cta-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .cta-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .cta-section p {
+    font-size: 1rem;
+  }
+
+  .footer-bottom {
+    padding: 1.5rem 1rem;
+  }
+
+  .footer-bottom p {
+    font-size: 0.85rem;
+  }
+
+  .modal-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .modal-container {
+    border-radius: 15px 15px 0 0;
+    max-height: 92vh;
+  }
+
+  .modal-gallery {
+    padding: 1rem 1rem 0;
+  }
+
+  .modal-gallery-grid img {
+    height: 140px;
+  }
+
+  .modal-info {
+    padding: 1.2rem 1rem 1.5rem;
+    
+  }
+
+  .modal-title {
+    font-size: 1.4rem;
+  }
+
+  .modal-description {
+    font-size: 0.9rem;
+  }
+
+  .modal-meta {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .modal-info .btn {
+    display: block;
+    width: 100%;
+  }
+
+  .modal-close {
+    width: 32px;
+    height: 32px;
+    font-size: 1.5rem;
+    top: 0.8rem;
+    right: 0.8rem;
+  }
+}
+
+@media (hover: none) {
+  .tour-card:hover {
+    transform: none;
+  }
+
+  .modal-gallery-grid img:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .btn:hover {
+    transform: none;
+  }
+}
