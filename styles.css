@@ -23,8 +23,7 @@ body {
 
 /* Header */
 header {
-  background: var(--text-light);
-  box-shadow: var(--shadow);
+  
   position: fixed;
   width: 100%;
   top: 0;
@@ -32,12 +31,21 @@ header {
 }
 
 nav {
-  max-width: 1200px;
+  background: var(--text-light);
+  box-shadow: var(--shadow);
+  border-radius: 0 0 50px 50px;
+  max-width: 430px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 5px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+}
+
+nav img.logo-img {
+  width: 60px;
+  margin-right: 0.5rem;
+  
 }
 
 .logo {
@@ -121,7 +129,7 @@ nav {
 
 /* Hero Section */
 .hero {
-  height: 50vh;
+  height: 60vh;
   background:
     linear-gradient(rgba(31, 191, 175, 0.14), rgba(31, 191, 175, 0.167)),
     url("https://trekkingsantamarta.com/wp-content/uploads/2026/06/Palacio-de-las-nubes-scaled.webp")
@@ -131,7 +139,7 @@ nav {
   justify-content: center;
   text-align: center;
   color: var(--text-light);
-  margin-top: 70px;
+  
 }
 
 .hero-content h1 {
@@ -403,6 +411,10 @@ footer {
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 1rem;
+}
+
+.modal-description p strong{
+  color: var(--secondary-color);
 }
 
 .modal-meta {
