@@ -3,10 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explora Mundos - Catálogo de Tours</title>
+    <title data-i18n="title">Explora Mundos - Catálogo de Tours</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="https://trekkingsantamarta.com/wp-content/uploads/2025/03/Trekking-Santa-Marta-Logo-1-2048x2040.png">
-    
+
+    <!-- SEO -->
+    <meta name="description" content="Tours y trekking en la Sierra Nevada de Santa Marta. Ciudad Perdida, Wimake, cascadas y más. Guías locales, experiencias auténticas.">
+    <meta name="keywords" content="trekking santa marta, ciudad perdida, sierra nevada, tours colombia, wimake">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Trekking Santa Marta">
+    <meta name="theme-color" content="#1FBFAF">
+    <link rel="canonical" href="https://trekkingsantamarta.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Trekking Santa Marta - Tours en la Sierra Nevada">
+    <meta property="og:description" content="Descubre tours de trekking por la Sierra Nevada de Santa Marta. Ciudad Perdida, Wimake, cascadas sagradas y experiencias auténticas con comunidades indígenas.">
+    <meta property="og:image" content="https://trekkingsantamarta.com/wp-content/uploads/2026/09/trekkingsantamarta.jpeg">
+    <meta property="og:url" content="https://trekkingsantamarta.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_CO">
+    <meta property="og:locale:alternate" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Trekking Santa Marta - Tours en la Sierra Nevada">
+    <meta name="twitter:description" content="Tours de trekking por la Sierra Nevada de Santa Marta. Ciudad Perdida, Wimake y más.">
+    <meta name="twitter:image" content="https://trekkingsantamarta.com/wp-content/uploads/2026/09/trekkingsantamarta.jpeg">
 </head>
 <body>
     <!-- Header -->
@@ -15,14 +37,18 @@
             <img src="https://trekkingsantamarta.com/wp-content/uploads/2025/03/Trekking-Santa-Marta-Logo-1-2048x2040.png" alt="Trekking Santa Marta Logo" class="logo-img">
             <a href="#" class="logo">Trekking Santa Marta</a>
         </nav>
+        <div class="lang-nav">
+            <button class="lang-btn active" data-lang="es">ES</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+        </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Descubre el Mundo con Nosotros</h1>
-            <p>Experiencias únicas, recuerdos inolvidables</p>
-            <a href="#tours" class="btn">Explorar Tours</a>
+            <h1 data-i18n="heroTitle">Descubre el Mundo con Nosotros</h1>
+            <p data-i18n="heroSubtitle">Experiencias únicas, recuerdos inolvidables</p>
+            <a href="#tours" class="btn" data-i18n="heroBtn">Explorar Tours</a>
         </div>
     </section>
 
@@ -33,8 +59,8 @@
 
     <!-- Tours Section -->
     <section class="tours-section" id="tours">
-        <h2 class="section-title">Tours Destacados</h2>
-        <p class="section-subtitle">Las experiencias más solicitadas por nuestros viajeros</p>
+        <h2 class="section-title" data-i18n="featuredTitle">Tours Destacados</h2>
+        <p class="section-subtitle" data-i18n="featuredSubtitle">Las experiencias más solicitadas por nuestros viajeros</p>
         
         <div class="tours-grid">
             <!-- Los tours se generan con .js -->
@@ -43,47 +69,47 @@
 
     <!-- Features Section -->
     <section class="features-section" id="features">
-        <h2 class="section-title">¿Por qué elegirnos?</h2>
-        <p class="section-subtitle">Más de 15 años creando experiencias inolvidables</p>
+        <h2 class="section-title" data-i18n="featuresTitle">¿Por qué elegirnos?</h2>
+        <p class="section-subtitle" data-i18n="featuresSubtitle">Más de 15 años creando experiencias inolvidables</p>
         
         <div class="features-grid">
             <div class="feature-card">
                 <div class="feature-icon">🌱</div>
-                <h3 class="feature-title">Turismo Sostenible</h3>
-                <p>Apoyamos comunidades locales y minimizamos nuestro impacto ambiental en cada destino.</p>
+                <h3 class="feature-title" data-i18n="feat1Title">Turismo Sostenible</h3>
+                <p data-i18n="feat1Desc">Apoyamos comunidades locales y minimizamos nuestro impacto ambiental en cada destino.</p>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">👨‍✈️</div>
-                <h3 class="feature-title">Guías Expertos</h3>
-                <p>Guías certificados y apasionados que conocen cada rincón de los destinos.</p>
+                <h3 class="feature-title" data-i18n="feat2Title">Guías Expertos</h3>
+                <p data-i18n="feat2Desc">Guías certificados y apasionados que conocen cada rincón de los destinos.</p>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">📞</div>
-                <h3 class="feature-title">Soporte 24/7</h3>
-                <p>Asistencia en español durante todo tu viaje, antes, durante y después.</p>
+                <h3 class="feature-title" data-i18n="feat3Title">Soporte 24/7</h3>
+                <p data-i18n="feat3Desc">Asistencia en español durante todo tu viaje, antes, durante y después.</p>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">✨</div>
-                <h3 class="feature-title">Experiencias Únicas</h3>
-                <p>Acceso a experiencias exclusivas y actividades fuera de lo común.</p>
+                <h3 class="feature-title" data-i18n="feat4Title">Experiencias Únicas</h3>
+                <p data-i18n="feat4Desc">Acceso a experiencias exclusivas y actividades fuera de lo común.</p>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
     <section class="cta-section">
-        <h2>¿Listo para tu próxima aventura?</h2>
-        <p>Más información en nuestro sitio oficial trekkingsantamarta.com</p>
-        <a href="https://api.whatsapp.com/send/?phone=573104132101" class="btn">Solicitar Cotización</a>
+        <h2 data-i18n="ctaTitle">¿Listo para tu próxima aventura?</h2>
+        <p data-i18n="ctaSub">Más información en nuestro sitio oficial trekkingsantamarta.com</p>
+        <a href="https://api.whatsapp.com/send/?phone=573104132101" class="btn" data-i18n="ctaBtn">Solicitar Cotización</a>
     </section>
 
     <!-- Footer -->
     <footer id="contacto">
         <div class="footer-bottom">
-            <p>&copy; 2026 Todos los derechos reservados | Más información en <a href="https://trekkingsantamarta.com" target="_blank">trekkingsantamarta.com</a></p>
+            <p><span data-i18n="footer">&copy; 2026 Todos los derechos reservados | Más información en </span><a href="https://trekkingsantamarta.com" target="_blank">trekkingsantamarta.com</a></p>
         </div>
     </footer>
     <!-- Modal Detalles del Tour -->
@@ -97,7 +123,7 @@
                 <h2 class="modal-title" id="modalTitle"></h2>
                 <p class="modal-description" id="modalDescription"></p>
                 <div class="modal-meta" id="modalMeta"></div>
-                <a href="https://api.whatsapp.com/send/?phone=573104132101" class="btn">Reservar Ahora</a>
+                <a href="https://api.whatsapp.com/send/?phone=573104132101" class="btn" data-i18n="btnBook">Reservar Ahora</a>
             </div>
         </div>
     </div>
