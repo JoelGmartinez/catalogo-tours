@@ -69,6 +69,8 @@ const toursData = [
         id: 7,
         image: "https://trekkingsantamarta.com/wp-content/uploads/2026/09/1000414036-1024x768.webp",
         imageAlt: "Laguna Sagrada Sierra Nevada",
+        imageWidth: 1024,
+        imageHeight: 768,
         images: [
             "https://trekkingsantamarta.com/wp-content/uploads/2026/09/1000414036-1024x768.webp",
             "https://trekkingsantamarta.com/wp-content/uploads/2026/09/1000414042-1024x768.webp",
@@ -138,7 +140,7 @@ function createTourCard(tour) {
     const metaItems = meta.map(item => `<span class="meta-item">${item}</span>`).join('');
 
     card.innerHTML = `
-        <img src="${tour.image}" alt="${tour.imageAlt || title}" class="tour-image">
+        <img src="${tour.image}" alt="${tour.imageAlt || title}" class="tour-image" width="${tour.imageWidth || 1024}" height="${tour.imageHeight || 1024}" loading="lazy" decoding="async">
         <div class="tour-content">
             <h3 class="tour-title">${title}</h3>
             <p class="tour-description">${desc}</p>
@@ -170,7 +172,7 @@ function renderFeaturedTour(tourId = 1) {
     const metaItems = meta.map(item => `<span class="meta-item">${item}</span>`).join('');
 
     card.innerHTML = `
-        <img src="${tour.image}" alt="${tour.imageAlt || title}">
+        <img src="${tour.image}" alt="${tour.imageAlt || title}" width="${tour.imageWidth || 1024}" height="${tour.imageHeight || 1024}" decoding="async">
         <div class="featured-content">
             <span class="featured-badge">${t('featuredBadge') || 'Tour Favorito'}</span>
             <h2>${title}</h2>
@@ -180,6 +182,8 @@ function renderFeaturedTour(tourId = 1) {
         </div>
     `;
 }
+
+let modalHistoryActive = false;
 
 function openModal(tourId) {
     const tour = toursData.find(t => t.id === tourId);
@@ -200,6 +204,11 @@ function openModal(tourId) {
         `<img src="${img}" alt="${tour.imageAlt || title}" loading="lazy">`
     ).join('');
 
+    if (!modalHistoryActive) {
+        history.pushState({ modal: true }, '');
+        modalHistoryActive = true;
+    }
+
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
@@ -208,6 +217,10 @@ function closeModal() {
     const modal = document.getElementById('tourModal');
     modal.classList.remove('active');
     document.body.style.overflow = '';
+    if (modalHistoryActive) {
+        modalHistoryActive = false;
+        history.back();
+    }
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -242,5 +255,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') closeModal();
+    });
+
+    window.addEventListener('popstate', () => {
+        if (!modalHistoryActive) return;
+        modalHistoryActive = false;
+        closeModal();
     });
 });
